@@ -5,9 +5,12 @@ module.exports = {
       method: "shell.run",
       params: {
         venv: "env",
-        env: { },
+        env: { 
+          HUGGING_FACE_TOKEN: "{{env.HUGGING_FACE_TOKEN}}"
+        },
         path: "app",
         message: [
+          "huggingface-cli login --token $HUGGING_FACE_TOKEN",
           "mflux-webui",
         ],
         on: [{

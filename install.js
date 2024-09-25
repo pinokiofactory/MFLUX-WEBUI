@@ -17,6 +17,12 @@ module.exports = {
           "pip install -e .",
         ]
       }
+    },
+    {
+      method: "notify",
+      params: {
+        html: "Installation finished successfully! Please set your Hugging Face token in the ENVIRONMENT file before starting the application."
+      }
     }
   ]
 }

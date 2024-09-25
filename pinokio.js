@@ -2,7 +2,7 @@ const path = require('path')
 module.exports = {
   version: "2.0",
   title: "MLFLUXUI",
-  description: "",
+  description: "MLX port of FLUX based on the Huggingface Diffusers implementation.",
   icon: "icon.html; charset=utf-8",
   menu: async (kernel, info) => {
     let installed = info.exists("app/env")
@@ -12,6 +12,7 @@ module.exports = {
       update: info.running("update.js"),
       reset: info.running("reset.js")
     }
+
     if (running.install) {
       return [{
         default: true,
@@ -20,10 +21,11 @@ module.exports = {
         href: "install.js",
       }]
     } else if (installed) {
+      let menuItems = []
       if (running.start) {
         let local = info.local("start.js")
         if (local && local.url) {
-          return [{
+          menuItems.push({
             default: true,
             icon: "fa-solid fa-rocket",
             text: "Open Web UI",
@@ -32,31 +34,31 @@ module.exports = {
             icon: 'fa-solid fa-terminal',
             text: "Terminal",
             href: "start.js",
-          }]
+          })
         } else {
-          return [{
+          menuItems.push({
             default: true,
             icon: 'fa-solid fa-terminal',
             text: "Terminal",
             href: "start.js",
-          }]
+          })
         }
       } else if (running.update) {
-        return [{
+        menuItems.push({
           default: true,
           icon: 'fa-solid fa-terminal',
           text: "Updating",
           href: "update.js",
-        }]
+        })
       } else if (running.reset) {
-        return [{
+        menuItems.push({
           default: true,
           icon: 'fa-solid fa-terminal',
           text: "Resetting",
           href: "reset.js",
-        }]
+        })
       } else {
-        return [{
+        menuItems = [{
           default: true,
           icon: "fa-solid fa-power-off",
           text: "Start",
@@ -75,6 +77,8 @@ module.exports = {
           href: "reset.js",
         }]
       }
+      
+      return menuItems
     } else {
       return [{
         default: true,
