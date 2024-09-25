@@ -47,7 +47,7 @@ GRADIO_TEMP_DIR=./cache/GRADIO_TEMP_DIR
 # This token is required to download gated models.
 #
 ##########################################################################
-HUGGING_FACE_TOKEN=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
+HUGGING_FACE_TOKEN=
 
 ##########################################################################
 #
