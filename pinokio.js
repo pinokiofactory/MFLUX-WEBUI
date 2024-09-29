@@ -1,9 +1,9 @@
 const path = require('path')
 module.exports = {
-  version: "2.0",
-  title: "MLFLUXUI",
-  description: "MLX port of FLUX based on the Huggingface Diffusers implementation.",
-  icon: "icon.html; charset=utf-8",
+  version: "2.1",
+  title: "MFLUX-WEBUI",
+  description: "A powerful and user-friendly web interface for MFLUX, powered by MLX and Gradio",
+  icon: "icon.png",
   menu: async (kernel, info) => {
     let installed = info.exists("app/env")
     let running = {
@@ -21,64 +21,101 @@ module.exports = {
         href: "install.js",
       }]
     } else if (installed) {
-      let menuItems = []
       if (running.start) {
         let local = info.local("start.js")
         if (local && local.url) {
-          menuItems.push({
-            default: true,
-            icon: "fa-solid fa-rocket",
-            text: "Open Web UI",
-            href: local.url,
-          }, {
-            icon: 'fa-solid fa-terminal',
-            text: "Terminal",
-            href: "start.js",
-          })
+          return [
+            {
+              default: true,
+              icon: "fa-solid fa-rocket",
+              text: "Open Web UI",
+              href: local.url,
+            },
+            {
+              icon: 'fa-solid fa-terminal',
+              text: "Terminal",
+              href: "start.js",
+            },
+            {
+              icon: "fa-solid fa-flask",
+              text: "Outputs",
+              href: "app/output?fs"
+            },
+            {
+              icon: "fa-solid fa-cube",
+              text: "Models",
+              href: "app/models?fs"
+            },
+            {
+              icon: "fa-solid fa-layer-group",
+              text: "LoRA",
+              href: "app/lora?fs"
+            }
+          ]
         } else {
-          menuItems.push({
-            default: true,
-            icon: 'fa-solid fa-terminal',
-            text: "Terminal",
-            href: "start.js",
-          })
+          return [
+            {
+              default: true,
+              icon: 'fa-solid fa-terminal',
+              text: "Terminal",
+              href: "start.js",
+            }
+          ]
         }
       } else if (running.update) {
-        menuItems.push({
+        return [{
           default: true,
           icon: 'fa-solid fa-terminal',
           text: "Updating",
           href: "update.js",
-        })
+        }]
       } else if (running.reset) {
-        menuItems.push({
+        return [{
           default: true,
           icon: 'fa-solid fa-terminal',
           text: "Resetting",
           href: "reset.js",
-        })
-      } else {
-        menuItems = [{
-          default: true,
-          icon: "fa-solid fa-power-off",
-          text: "Start",
-          href: "start.js",
-        }, {
-          icon: "fa-solid fa-plug",
-          text: "Update",
-          href: "update.js",
-        }, {
-          icon: "fa-solid fa-plug",
-          text: "Install",
-          href: "install.js",
-        }, {
-          icon: "fa-regular fa-circle-xmark",
-          text: "Reset",
-          href: "reset.js",
         }]
+      } else {
+        return [
+          {
+            default: true,
+            icon: "fa-solid fa-power-off",
+            text: "Start",
+            href: "start.js",
+          },
+          {
+            icon: "fa-solid fa-flask",
+            text: "Outputs",
+            href: "app/output?fs"
+          },
+          {
+            icon: "fa-solid fa-cube",
+            text: "Models",
+            href: "app/models?fs"
+          },
+          {
+            icon: "fa-solid fa-layer-group",
+            text: "LoRA",
+            href: "app/lora?fs"
+          },
+          {
+            icon: "fa-solid fa-plug",
+            text: "Update",
+            href: "update.js",
+          },
+          {
+            icon: "fa-solid fa-plug",
+            text: "Install",
+            href: "install.js",
+          },
+          {
+            icon: "fa-regular fa-circle-xmark",
+            text: "Reset",
+            href: "reset.js",
+          }
+        ]
       }
-      
-      return menuItems
     } else {
       return [{
         default: true,

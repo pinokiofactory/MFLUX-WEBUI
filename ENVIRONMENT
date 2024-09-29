@@ -42,15 +42,6 @@ GRADIO_TEMP_DIR=./cache/GRADIO_TEMP_DIR
 
 ##########################################################################
 #
-# HUGGING_FACE_TOKEN
-# Set this variable to your Hugging Face token for authentication.
-# This token is required to download gated models.
-#
-##########################################################################
-HUGGING_FACE_TOKEN=
-
-##########################################################################
-#
 # HF_HOME
 #
 # Huggingface cache

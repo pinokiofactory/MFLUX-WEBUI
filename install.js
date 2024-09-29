@@ -4,24 +4,24 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          "git clone https://github.com/CharafChnioune/mflux.git app",
+          "git clone https://github.com/CharafChnioune/MFLUX-WEBUI.git app",
         ]
       }
     },
     {
       method: "shell.run",
       params: {
-        venv: "env",           
-        path: "app",               
+        venv: "env",
+        path: "app",
         message: [
-          "pip install -e .",
+          "pip install -r requirements.txt"
         ]
       }
     },
     {
-      method: "notify",
+      method: "fs.link",
       params: {
-        html: "Installation finished successfully! Please set your Hugging Face token in the ENVIRONMENT file before starting the application."
+        venv: "app/env"
       }
     }
   ]

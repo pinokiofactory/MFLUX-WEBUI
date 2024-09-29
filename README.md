@@ -1,4 +1,4 @@
-# MLFLUXUI
+# MFLUX-WEBUI
 
-A pinokio script for https://github.com/CharafChnioune/mflux.git
+A pinokio script for git@github.com:CharafChnioune/MFLUX-WEBUI.git
 
