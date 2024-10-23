@@ -2,7 +2,7 @@ const path = require('path')
 module.exports = {
   version: "2.1",
   title: "MFLUX-WEBUI",
-  description: "A powerful and user-friendly web interface for MFLUX, powered by MLX and Gradio",
+  description: "[MAC ONLY] A powerful and user-friendly web interface for FLUX, powered by MLX and Gradio via MFLUX",
   icon: "icon.png",
   menu: async (kernel, info) => {
     let installed = info.exists("app/env")
