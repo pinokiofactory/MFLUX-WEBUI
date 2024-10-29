@@ -1,4 +1,15 @@
 
+
+##########################################################################
+#
+# OLLAMA_HOST
+# Set this variable to use a remote ollama for prompt enhancement
+# If not specified, the default ollama host and port will be used.
+# (localhost:11434)
+#
+##########################################################################
+OLLAMA_HOST=
+
 ##########################################################################
 #
 # PINOKIO_SHARE_CLOUDFLARE
