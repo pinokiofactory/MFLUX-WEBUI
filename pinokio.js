@@ -39,17 +39,17 @@ module.exports = {
             {
               icon: "fa-solid fa-flask",
               text: "Outputs",
-              href: "app/output?fs"
+              href: "app/output?fs=true"
             },
             {
               icon: "fa-solid fa-cube",
               text: "Models",
-              href: "app/models?fs"
+              href: "app/models?fs=true"
             },
             {
               icon: "fa-solid fa-layer-group",
               text: "LoRA",
-              href: "app/lora?fs"
+              href: "app/lora?fs=true"
             }
           ]
         } else {
@@ -87,17 +87,17 @@ module.exports = {
           {
             icon: "fa-solid fa-flask",
             text: "Outputs",
-            href: "app/output?fs"
+            href: "app/output?fs=true"
           },
           {
             icon: "fa-solid fa-cube",
             text: "Models",
-            href: "app/models?fs"
+            href: "app/models?fs=true"
           },
           {
             icon: "fa-solid fa-layer-group",
             text: "LoRA",
-            href: "app/lora?fs"
+            href: "app/lora?fs=true"
           },
           {
             icon: "fa-solid fa-plug",
