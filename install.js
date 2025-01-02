@@ -4,7 +4,7 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          "git clone https://github.com/CharafChnioune/MFLUX-WEBUI.git app",
+          "git clone -b development https://github.com/CharafChnioune/MFLUX-WEBUI.git app",
         ]
       }
     },
