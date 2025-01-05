@@ -13,6 +13,12 @@ module.exports = {
         on: [{
           "event": "/http:\/\/\\S+/",   
           "done": true
+        }, {
+          "event": "/error:/i",
+          "break": false
+        }, {
+          "event": "/errno/i",
+          "break": false
         }]
       }
     },
