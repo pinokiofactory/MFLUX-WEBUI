@@ -1,0 +1,32 @@
+{
+  "posts": [
+    "https://x.com/cocktailpeanut/status/1849139685693526080",
+    "https://x.com/cocktailpeanut/status/1852465509092237510",
+    "https://x.com/cocktailpeanut/status/1851043338335477836"
+  ],
+  "links": [{
+    "title": "CCCoderAI (wrote the app)",
+    "links": [{
+      "title": "X",
+      "value": "https://x.com/CCCoderAI"
+    }, {
+      "title": "Github",
+      "value": "https://github.com/CharafChnioune"
+    }]
+  }, {
+    "title": "cocktailpeanut (wrote the launcher)",
+    "links": [{
+      "type": "bitcoin",
+      "value": "bc1qx90z3ce9qz4p2pnt06gd0ytntl86qw4d6qv39k"
+    }, {
+      "title": "X",
+      "value": "https://x.com/cocktailpeanut"
+    }, {
+      "title": "Github",
+      "value": "https://github.com/cocktailpeanut"
+    }, {
+      "title": "Discord",
+      "value": "https://discord.gg/TQdNwadtE4"
+    }]
+  }]
+}
